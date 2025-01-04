@@ -4,6 +4,7 @@ import One from "../images/1.jpg";
 import Two from "../images/2.jpg";
 import Three from "../images/3.jpg";
 import Four from "../images/4.jpg";
+import Scene from "./Scene";
 
 const StyledHeroWrapper = styled.div`
   display: flex;
@@ -140,6 +141,7 @@ const HeroText = () => {
       <StyledHeroWrapper>
         <StyledHeroTextOne>
           <div className="hero__image">
+            <Scene image={One} />
             <img src={One} alt="" />
           </div>
           <h2>Motion</h2>
@@ -147,15 +149,18 @@ const HeroText = () => {
         <StyledHeroTextTwo>
           <h2>AND</h2>
           <div className="hero__image">
+            <Scene image={Three} />
             <img src={Three} alt="" />
           </div>
         </StyledHeroTextTwo>
         <StyledHeroTextThree>
           <div className="hero__image">
+            <Scene image={Two} />
             <img src={Two} alt="" />
           </div>
           <h2>emotion</h2>
           <div className="hero__image">
+            <Scene image={Four} />
             <img src={Four} alt="" />
           </div>
         </StyledHeroTextThree>
