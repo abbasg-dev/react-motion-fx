@@ -42,8 +42,8 @@ const StyledHeroTextOne = styled.div`
     flex: 1 0;
 
     img {
-      // display: none;
-      // visibility: hidden;
+      display: none;
+      visibility: hidden;
       max-width: 100%;
       vertical-align: middle;
     }
@@ -75,8 +75,8 @@ const StyledHeroTextTwo = styled.div`
     flex: 1 0;
 
     img {
-      // display: none;
-      // visibility: hidden;
+      display: none;
+      visibility: hidden;
       max-width: 100%;
       vertical-align: middle;
     }
@@ -108,8 +108,8 @@ const StyledHeroTextThree = styled.div`
     max-width: 240px;
     flex: 1 0;
     img {
-      // display: none;
-      // visibility: hidden;
+      display: none;
+      visibility: hidden;
       max-width: 100%;
       vertical-align: middle;
     }
