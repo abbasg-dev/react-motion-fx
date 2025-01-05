@@ -35,12 +35,6 @@ const StyledMenuContainer = styled.div`
   }
 `;
 
-const StyledFakeDiv = styled.div`
-  width: 100vw;
-  height: 100vh;
-  position: relative;
-`;
-
 const Header = () => {
   useEffect(() => {
     gsap.to(".SVGref", {
@@ -50,7 +44,7 @@ const Header = () => {
         start: 0,
         end: "max",
         scrub: 1,
-        markers: true,
+        // markers: true,
       },
     });
   }, []);
@@ -78,7 +72,6 @@ const Header = () => {
         <div className="menu__text">Stories</div>
         <div className="menu__text">Contact</div>
       </StyledMenuContainer>
-      <StyledFakeDiv />
     </>
   );
 };
