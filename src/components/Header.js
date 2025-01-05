@@ -1,5 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const StyledHeaderLink = styled.a`
   mix-blend-mode: difference;
@@ -7,6 +11,7 @@ const StyledHeaderLink = styled.a`
   z-index: 19;
   top: 2.9vh;
   left: 4vw;
+  width: 2.2vw;
   svg {
     fill: #fff;
   }
@@ -30,7 +35,26 @@ const StyledMenuContainer = styled.div`
   }
 `;
 
+const StyledFakeDiv = styled.div`
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+`;
+
 const Header = () => {
+  useEffect(() => {
+    gsap.to(".SVGref", {
+      rotate: () => -360,
+      ease: "none",
+      scrollTrigger: {
+        start: 0,
+        end: "max",
+        scrub: 1,
+        markers: true,
+      },
+    });
+  }, []);
+
   return (
     <>
       <StyledHeaderLink href="/#">
@@ -54,6 +78,7 @@ const Header = () => {
         <div className="menu__text">Stories</div>
         <div className="menu__text">Contact</div>
       </StyledMenuContainer>
+      <StyledFakeDiv />
     </>
   );
 };
