@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
-import { Scene } from "../components/Scene";
 import styled from "styled-components";
+import { gsap } from "gsap";
+import Scene from "../components/Scene";
 
 const StyledList = styled.li`
     position: relative;
@@ -46,6 +47,33 @@ const StyledList = styled.li`
 const ProjectItems = ({ src, name }) => {
   const outerRef = useRef();
 
+  const handleMouseEnter = () => {
+    gsap.to(outerRef.current, {
+      autoAlpha: 1,
+      duration: 1.3,
+      ease: "expo",
+    });
+  };
+
+  const handleMouseLeave = () => {
+    gsap.to(outerRef.current, {
+      autoAlpha: 0,
+      duration: 1,
+      ease: "expo",
+    });
+  };
+
+  const handleMouseMove = ({ clientX, clientY }) => {
+    const bound = outerRef.current.getBoundingClientRect();
+    const yVal = clientY - (bound.top + Math.floor(bound.height / 2));
+
+    gsap.to(outerRef.current, {
+      duration: 1,
+      y: yVal,
+      ease: "none",
+    });
+  };
+
   return (
     <StyledList
       onMouseEnter={handleMouseEnter}
@@ -71,6 +99,7 @@ const ProjectItems = ({ src, name }) => {
             L230,225.3l190,86.2l4.1-9.4l-193-79.3l204.7,40l1.8-10.1l-206.1-32.6L440,211.9z"
           />
         </svg>
+        <span>{name}</span>
       </a>
     </StyledList>
   );

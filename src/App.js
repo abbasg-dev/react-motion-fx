@@ -4,6 +4,7 @@ import HeroText from "./components/HeroText";
 import ImageSection from "./components/ImageSection";
 import ContentSection from "./components/ContentSection";
 import FeaturedWork from "./components/FeaturedWork";
+import Projects from "./components/Projects";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <ImageSection />
       <ContentSection />
       <FeaturedWork />
+      <Projects />
     </>
   );
 }
