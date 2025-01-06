@@ -85,7 +85,7 @@ const ContentSection = () => {
         // markers: true,
       },
     });
-  });
+  }, []);
 
   return (
     <>
