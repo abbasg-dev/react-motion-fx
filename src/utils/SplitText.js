@@ -1,7 +1,6 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import styled from "styled-components";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,6 +18,33 @@ export function SplitText({ children }) {
   // console.log(words);
   const triggerRef = useRef();
   const [refs, setRef] = useArrayRef();
+
+  useEffect(() => {
+    const splitTextTween = gsap.timeline({
+      scrollTrigger: {
+        trigger: triggerRef.current,
+        start: "top bottom",
+        markers: true,
+      },
+    });
+    splitTextTween.fromTo(
+      refs.current,
+      {
+        autoAlpha: 0,
+        display: "inline-block",
+        y: "100%",
+      },
+      {
+        autoAlpha: 1,
+        delay: 0.2,
+        display: "inline-block",
+        duration: 1.5,
+        ease: "back.inOut",
+        stagger: 0.05,
+        y: "0%",
+      }
+    );
+  }, [refs]);
 
   return words.map((word, i) => {
     return (

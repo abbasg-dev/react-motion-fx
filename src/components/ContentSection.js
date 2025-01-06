@@ -2,7 +2,7 @@ import React, { useRef, useLayoutEffect } from "react";
 import styled from "styled-components";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-// import { SplitText } from "../utils/SplitText";
+import { SplitText } from "../utils/SplitText";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -38,7 +38,7 @@ const StyledSection = styled.section`
       background-color: #000;
     }
   }
-  .SVG_wrapper {
+  .SVG__wrapper {
     position: relative;
     max-width: 1600px;
     width: 100%;
@@ -82,7 +82,7 @@ const ContentSection = () => {
         start: "top bottom",
         end: "100%",
         scrub: true,
-        markers: true,
+        // markers: true,
       },
     });
   });
@@ -112,12 +112,12 @@ const ContentSection = () => {
         </div>
         <div className="section__wrapper">
           <p>
-            {/* <SplitText>
+            <SplitText>
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
               ever since the 1500s, when an unknown printer took a galley of
               type and scrambled it to make a type specimen book.
-            </SplitText> */}
+            </SplitText>
           </p>
         </div>
       </StyledSection>
