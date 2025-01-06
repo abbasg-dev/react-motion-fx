@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import HeroText from "./components/HeroText";
 import ImageSection from "./components/ImageSection";
 import ContentSection from "./components/ContentSection";
+import FeaturedWork from "./components/FeaturedWork";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <HeroText />
       <ImageSection />
       <ContentSection />
+      <FeaturedWork />
     </>
   );
 }
