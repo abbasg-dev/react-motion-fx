@@ -74,7 +74,7 @@ const FeaturedWork = () => {
       scrollTrigger: {
         trigger: titleTriggerRef.current,
         start: "top center",
-        markers: true,
+        //markers: true,
       },
     });
     gsap.to(".word__container-work", {
@@ -90,7 +90,7 @@ const FeaturedWork = () => {
       scrollTrigger: {
         trigger: titleTriggerRef.current,
         start: "top center",
-        markers: true,
+        //markers: true,
       },
     });
   }, []);

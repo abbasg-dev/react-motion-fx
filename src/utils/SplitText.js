@@ -24,7 +24,7 @@ export function SplitText({ children }) {
       scrollTrigger: {
         trigger: triggerRef.current,
         start: "top bottom",
-        markers: true,
+        //markers: true,
       },
     });
     splitTextTween.fromTo(

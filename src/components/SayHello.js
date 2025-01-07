@@ -1,5 +1,9 @@
-import React, { useRef } from "react";
+import React, { useRef, useLayoutEffect } from "react";
 import styled from "styled-components";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const StyledContactTitle = styled.div`
   margin-left: auto;
@@ -22,7 +26,7 @@ const StyledContactTitle = styled.div`
       position: relative;
       display: flex;
       flex-direction: column;
-      font-size: 12.55em;
+      font-size: 11.54em;
       letter-spacing: 4px;
       margin: 160px 0 80px 0;
       text-align: left;
@@ -108,6 +112,36 @@ const StyledContactMessage = styled.div`
 
 const SayHello = () => {
   const titleTriggerRef = useRef();
+
+  useLayoutEffect(() => {
+    gsap.set(".contact__title-h3", { perspective: 200 });
+    gsap.set(".contact__title-h3 span", {
+      opacity: 0,
+      scaleY: 2,
+      y: 250,
+      rotation: 15,
+      rotationX: -25,
+      transformOrigin: "0% 0% 0%",
+    });
+    gsap.to(".contact__title-h3 span", {
+      opacity: 1,
+      y: 0,
+      scaleY: 1,
+      rotation: 0,
+      rotationX: 0,
+      stagger: 0.15,
+      duration: 1.25,
+      transformOrigin: "0% 0% 0%",
+      ease: "power3.inOut",
+      delay: 0.25,
+      scrollTrigger: {
+        trigger: titleTriggerRef.current,
+        start: "top center",
+        //markers: true,
+      },
+    });
+  }, []);
+
   return (
     <>
       <StyledContactTitle ref={titleTriggerRef}>
