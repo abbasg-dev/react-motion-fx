@@ -5,6 +5,7 @@ import ImageSection from "./components/ImageSection";
 import ContentSection from "./components/ContentSection";
 import FeaturedWork from "./components/FeaturedWork";
 import Projects from "./components/Projects";
+import SayHello from "./components/SayHello";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <ContentSection />
       <FeaturedWork />
       <Projects />
+      <SayHello />
     </>
   );
 }
